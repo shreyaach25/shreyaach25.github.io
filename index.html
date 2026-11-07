@@ -6,6 +6,10 @@
 <title>Shreya Acharya — Engineering Lead · Java & Python Systems, Built for Applied AI</title>
 <meta name="description" content="Shreya Acharya — Engineering Lead (AVP) in financial services. 8 years building Java and Python systems; now building AI agents for risk management. M.Tech AI/ML (NLP), BITS Pilani.">
 <meta name="theme-color" content="#0b1f33">
+<link rel="canonical" href="https://shreyaach25.github.io/">
+<meta property="og:title" content="Shreya Acharya — Engineering Lead · Java & Python Systems, Built for Applied AI">
+<meta property="og:url" content="https://shreyaach25.github.io/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -180,6 +184,34 @@
   .extra { display: none; }
   .role.open .extra { display: list-item; }
 
+
+  /* Projects */
+  .project { display: grid; grid-template-columns: 1.15fr 1fr; gap: 0; padding: 0; overflow: hidden; }
+  .project .p-main { padding: 32px; }
+  .project .p-side { padding: 32px; background: linear-gradient(160deg, rgba(22,74,107,.55), rgba(15,44,73,.35)); border-left: 1px solid var(--line); }
+  .p-label { font-size: 0.74rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--cyan); }
+  .project h3 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px; }
+  .project .tagline { color: var(--cyan-bright); font-weight: 600; margin-top: 2px; }
+  .project .p-desc { color: #cddbe7; margin-top: 14px; }
+  .steps { list-style: none; counter-reset: s; margin-top: 22px; display: grid; gap: 14px; }
+  .steps li { counter-increment: s; position: relative; padding-left: 44px; color: #cddbe7; font-size: 0.95rem; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; color: #062033; background: var(--cyan); }
+  .steps li b { color: var(--text); display: block; font-weight: 600; }
+  .p-side h4 { font-size: 0.82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+  .p-side h4 + * { margin-bottom: 24px; }
+  .features { list-style: none; display: grid; gap: 9px; }
+  .features li { position: relative; padding-left: 20px; color: #cddbe7; font-size: 0.93rem; }
+  .features li::before { content: ""; position: absolute; left: 2px; top: 0.66em; width: 7px; height: 7px; border-radius: 2px; transform: rotate(45deg); background: var(--cyan); }
+  .features li b { color: var(--text); font-weight: 600; }
+  .p-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .p-metrics div { background: rgba(10,27,45,.5); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+  .p-metrics b { display: block; font-size: 1.4rem; font-weight: 800; color: var(--cyan-bright); line-height: 1; }
+  .p-metrics span { display: block; font-size: 0.78rem; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+  .p-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .project .actions { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .project .note { font-size: 0.82rem; color: var(--dim); }
+  @media (max-width: 900px) { .project { grid-template-columns: 1fr; } .project .p-side { border-left: none; border-top: 1px solid var(--line); } }
+
   /* Education + creds */
   .edu-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
   .edu-card h3 { font-size: 1.1rem; font-weight: 700; margin-top: 14px; }
@@ -284,6 +316,11 @@
     .list li { color: #23384c; padding: 4px 0; }
     footer { display: none; }
     a { color: #0b1f33; }
+    .project { display: block; } .project .p-main, .project .p-side { padding: 0; background: none; border: none; }
+    .project h3 { font-size: 12pt; } .project .p-desc, .steps li, .features li { color: #23384c; font-size: 10pt; }
+    .steps { gap: 4px; margin-top: 6px; } .steps li { padding-left: 0; } .steps li::before { display: none; }
+    .p-metrics, .project .actions .btn { display: none; } .p-side h4 { margin: 8px 0 4px; color: #136b86; }
+    #projects { break-inside: avoid; }
   }
 </style>
 <script>document.documentElement.classList.add('js');</script>
@@ -300,9 +337,10 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li class="nav-cta"><button class="btn btn-primary btn-sm" onclick="window.print()">Résumé PDF</button></li>
+      <li class="nav-cta"><a class="btn btn-primary btn-sm" href="Shreya_Acharya_Resume.pdf" download>Résumé PDF</a></li>
     </ul>
   </div>
 </nav>
@@ -333,8 +371,7 @@
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Pune, India</span>
       <a href="mailto:shreyaach25@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>shreyaach25@gmail.com</a>
       <a href="https://www.linkedin.com/in/shreya-acharya-a87974141" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.35h-4v-4.74c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.83h-4z"/></svg>LinkedIn</a>
-      <!-- Add GitHub once your username is set:
-      <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a> -->
+      <a href="https://github.com/shreyaach25" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true">Scroll<i></i></div>
@@ -524,8 +561,55 @@
   </div>
 </section>
 
+<!-- ======= PROJECTS ======= -->
+<section class="block alt" id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Projects</p>
+      <h2>Built on my own time</h2>
+      <p>A personal project applying data and AI to the question every engineer asks: where do my skills pay off?</p>
+    </div>
+    <article class="card project reveal">
+      <div class="p-main">
+        <p class="p-label">Featured project</p>
+        <h3>Tyche</h3>
+        <p class="tagline">Find where your skills pay off.</p>
+        <p class="p-desc">A job-market analysis tool for engineers. Tyche compares your profile against live hiring data, ranks cities and countries, surfaces companies hiring for your profile and pinpoints the in-demand skills you're missing.</p>
+        <ol class="steps">
+          <li><b>Tell it about you</b>Upload a résumé or enter your skills and target locations — résumés are parsed in memory, never stored.</li>
+          <li><b>Read your market</b>See demand for your skills, hiring role families, pay and openings by location, and best-match jobs with scores and reasons.</li>
+          <li><b>Plan what to learn</b>Get an upskilling plan ranked by the skills employers request most, with how many extra roles each one unlocks.</li>
+        </ol>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://shreyaach25.github.io/tyche-site/" target="_blank" rel="noopener">View project ↗</a>
+          <span class="note">Source code is private.</span>
+        </div>
+      </div>
+      <div class="p-side">
+        <h4>Highlights</h4>
+        <ul class="features">
+          <li><b>Location fit</b> — scores places on hiring momentum, pay uplift, visa ease and matching roles</li>
+          <li><b>Company fit</b> — scores employers on skill overlap, seniority and location; flags stretch roles</li>
+          <li><b>Posting parser</b> — extracts required vs nice-to-have skills from job descriptions, mapping aliases</li>
+          <li><b>Hiring trends</b> — compares postings per company over rolling four-week windows</li>
+        </ul>
+        <h4>By the numbers</h4>
+        <div class="p-metrics">
+          <div><b>11</b><span>locations scored</span></div>
+          <div><b>130+</b><span>skill aliases parsed</span></div>
+          <div><b>Live</b><span>postings via Adzuna API</span></div>
+        </div>
+        <h4>Stack</h4>
+        <div class="p-tags">
+          <span class="tag key">Python</span><span class="tag key">FastAPI</span><span class="tag key">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Postgres (Neon)</span><span class="tag">SQLite</span><span class="tag">Adzuna API</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- ======= EDUCATION ======= -->
-<section class="block alt" id="education">
+<section class="block" id="education">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">Education &amp; Recognition</p>
@@ -569,7 +653,7 @@
 </section>
 
 <!-- ======= CONTACT ======= -->
-<section class="block" id="contact">
+<section class="block alt" id="contact">
   <div class="wrap">
     <div class="contact reveal">
       <p class="eyebrow">Contact</p>
@@ -579,6 +663,7 @@
         <a class="btn btn-primary" href="mailto:shreyaach25@gmail.com">Email me</a>
         <button class="btn btn-outline" id="copyEmail" type="button">Copy email</button>
         <a class="btn btn-outline" href="https://www.linkedin.com/in/shreya-acharya-a87974141" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-outline" href="https://github.com/shreyaach25" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
       <p class="copy-note" id="copyNote" aria-live="polite"></p>
     </div>
